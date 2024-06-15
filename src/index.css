@@ -110,7 +110,7 @@ code {
   transform: rotate(-45deg);
   animation: reflect 3s ease-in-out infinite;
   -webkit-transform: rotate(-45deg);
-  -webkit-animation: reflect 3s ease-in-out infinite;
+  -webkit-animation: reflect 2s ease-in-out infinite;
 }
 @keyframes reflect {
   0% {

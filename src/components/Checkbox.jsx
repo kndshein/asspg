@@ -7,6 +7,7 @@ export default function Checkbox({
   handleOnClick,
   disabled,
   example,
+  is_round,
 }) {
   const colorConfig = {
     isReverseOptimized: {
@@ -56,14 +57,18 @@ export default function Checkbox({
   return (
     <section className="flex p-2">
       <div
-        className={`flex shrink-0 justify-center items-center mr-4 mt-1.5 w-14 h-14 border-4 rounded-xl transition ease-in-out ${
+        className={`flex shrink-0 justify-center items-center mr-4 mt-1.5 w-14 h-14 border-4 ${
+          is_round ? 'rounded-full' : 'rounded-xl'
+        } transition ease-in-out ${
           disabled
             ? 'border-zinc-800'
             : `border-gray-600 ${colorConfig[name].borderHover}`
         }`}
       >
         <button
-          className={`h-10 w-10 p-3 m-1 rounded-md transition ease-in-out ${
+          className={`h-10 w-10 p-3 m-1 ${
+            is_round ? 'rounded-full' : 'rounded-md'
+          } transition ease-in-out ${
             disabled
               ? 'bg-zinc-800'
               : `${

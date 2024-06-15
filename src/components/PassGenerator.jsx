@@ -144,6 +144,7 @@ export default function PassGenerator() {
           long_desc="By optimizing your password for reverse dictionary attacks, you allow other users to be hacked first. Outrunning the slowest of the group and whatnot."
           handleOnClick={handleOnClick}
           disabled={opts.isBothOptimized}
+          is_round
         />
         <Checkbox
           value={opts.isDictOptimized}
@@ -152,6 +153,7 @@ export default function PassGenerator() {
           long_desc="Sometimes it is better to simply brace for what's common. We can barely understand regular dictionary attacks, why bother with the reverse?"
           handleOnClick={handleOnClick}
           disabled={opts.isBothOptimized}
+          is_round
         />
         <hr className="border-gray-500 m-2" />
         <Checkbox
