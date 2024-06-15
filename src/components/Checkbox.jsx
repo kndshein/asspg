@@ -98,7 +98,9 @@ export default function Checkbox({
           {long_desc}
         </p>
         {example && (
-          <p className="text-gray-300 italic mt-0.5">Examples: {example}</p>
+          <p className="text-gray-300 italic mt-0.5 break-all">
+            Examples: {example}
+          </p>
         )}
       </section>
     </section>

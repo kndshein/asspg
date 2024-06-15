@@ -106,7 +106,7 @@ export default function PassGenerator() {
         <section className="w-full rounded-lg px-4 top-0 sticky">
           <div className="bg-zinc-900 pt-6">
             <button
-              className="w-full rounded-lg mt-0 p-2 py-4 font-bold text-xl text-white transition ease-in-out active:scale-95"
+              className="w-full rounded-lg mt-0 p-2 py-4 font-bold text-xl text-zinc-800 transition ease-in-out active:scale-95"
               onClick={() => handleOnSubmit()}
               style={{
                 backgroundColor: submitGradient.color,

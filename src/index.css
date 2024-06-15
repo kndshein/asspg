@@ -59,7 +59,8 @@ code {
     content: '';
     display: block;
     background: var(--border-bg);
-    width: 150%;
+    width: 300%;
+    height: 300%;
     padding-bottom: 150%;
     position: absolute;
     left: 50%;
@@ -96,6 +97,8 @@ code {
 .reflection {
   position: relative;
   overflow: hidden;
+  display: table-cell;
+  vertical-align: center;
 }
 .reflection::after {
   content: '';
