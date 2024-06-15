@@ -67,7 +67,7 @@ code {
     transform: translate(-50%, -50%);
     border-radius: 100%;
     z-index: -2;
-    animation: spin 5s linear infinite;
+    animation: border-rotate 5s linear infinite;
   }
 
   &::after {
@@ -83,7 +83,7 @@ code {
 .rotating-border:nth-last-of-type(1)::before {
   animation-delay: -5s;
 }
-@keyframes spin {
+@keyframes border-rotate {
   from {
     transform: translate(-50%, -50%) rotate(0);
   }
