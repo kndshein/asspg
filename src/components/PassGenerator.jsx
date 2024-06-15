@@ -157,6 +157,7 @@ export default function PassGenerator() {
                           backgroundColor: '#1f2937',
                           color: '#d1d5db',
                         },
+                    duration: 1500,
                   });
                   setIsCopied(true);
                 }}
