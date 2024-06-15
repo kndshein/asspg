@@ -40,7 +40,7 @@ export default function Scrambles({ text, newRender }) {
     if (activeText < textArray.length - 1) {
       interval = setInterval(() => {
         setActiveText(activeText + 1);
-      }, 45);
+      }, 40);
     }
     return () => clearInterval(interval);
   }, [activeText, textArray.length]);

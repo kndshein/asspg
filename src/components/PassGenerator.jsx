@@ -140,7 +140,7 @@ export default function PassGenerator() {
                     className: `rounded-md font-bold ${
                       isPaid ? 'reflection reflection-lg text-black' : ''
                     }`,
-                    // Tailwind classes are overriden in prod
+                    // Tailwind classes are overridden in prod
                     style: isPaid
                       ? {
                           paddingLeft: '1rem',
@@ -180,11 +180,11 @@ export default function PassGenerator() {
                 )}
               </button>
             </div>
-            <p className="mt-2 text-left opacity-25 italic text-sm text-white">
+            <p className="mt-2 text-left italic text-sm text-zinc-400">
               * Remember your password by simply memorizing it.
             </p>
             {isPaid && (
-              <p className="text-left opacity-25 italic text-sm text-white">
+              <p className="text-left italic text-sm text-zinc-400">
                 ** We&apos;ve been told that our developers don&apos;t know how
                 to code a shopping cart, so I guess it&apos;s on the house.
               </p>
