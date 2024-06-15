@@ -100,11 +100,13 @@ export default function PassGenerator() {
     <>
       <Toaster position="top-right" />
       <div className="flex flex-col max-w-2xl">
-        <h1 className="m-4 my-0 text-3xl text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-sky-400 font-semibold">
-          Aardvark Secure Secret Password Generator
-        </h1>
-        <section className="w-full rounded-lg px-4 top-0 sticky">
-          <div className="bg-zinc-900 pt-6">
+        <section className="w-full rounded-lg px-4 top-0 sticky h-[17rem]">
+          <div className="pb-2 pt-5 bg-zinc-900">
+            <h1 className="text-3xl text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-sky-400 font-semibold bg-zinc-900">
+              Aardvark Secure Secret Password Generator
+            </h1>
+          </div>
+          <div className="bg-zinc-900">
             <button
               className="w-full rounded-lg mt-0 p-2 py-4 font-bold text-xl text-zinc-800 transition ease-in-out active:scale-95"
               onClick={() => handleOnSubmit()}

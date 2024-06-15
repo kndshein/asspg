@@ -6,7 +6,7 @@ import AboutPage from './pages/AboutPage';
 function App() {
   return (
     <>
-      <nav className="flex justify-center items-center gap-8 p-4 mb-6 bg-zinc-900">
+      <nav className="flex justify-center items-center gap-8 p-4 pb-0 bg-zinc-900">
         <NavLink
           className={({ isActive }) => {
             return `uppercase ${

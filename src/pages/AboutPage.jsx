@@ -4,7 +4,7 @@ import FAQs from '../content/aboutFAQs';
 
 export default function AboutPage() {
   return (
-    <div className="max-w-2xl m-auto text-lg p-4 pt-0">
+    <div className="max-w-2xl m-auto text-lg p-4 pt-5">
       <h4 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-sky-400 mb-2">
         Our History
       </h4>
