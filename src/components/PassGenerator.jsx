@@ -91,7 +91,52 @@ export default function PassGenerator() {
       <p className="m-4 mb-2 mt-0 text-3xl text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-sky-400 font-semibold">
         Aardvark Secure Secret Password Generator
       </p>
-      <div className="border-2 border-cyan-400 p-2 m-4 mt-0 rounded-lg">
+      <section className="w-full rounded-lg px-4 top-0 sticky">
+        <div className="bg-zinc-900 pt-6">
+          <button
+            className="w-full rounded-lg mt-0 p-2 py-4 font-bold text-xl text-white transition ease-in-out hover:shadow-lg active:shadow-none active:scale-95 hover:shadow-gray-800"
+            onClick={() => handleOnSubmit()}
+            style={{
+              backgroundColor: submitGradient.color,
+              backgroundImage: submitGradient.gradient,
+            }}
+          >
+            Re-Generate Password
+          </button>
+          <div className="relative flex justify-center items-center h-16 w-100 mt-4 rounded-lg bg-gray-800">
+            {loading ? (
+              <RiLoader5Fill
+                className="animate-spin h-8 w-8"
+                style={{ color: 'grey' }}
+              />
+            ) : (
+              <p className="animate-pulse text-2xl font-mono text-white">
+                {generatedPassword}
+              </p>
+            )}
+            <button
+              onClick={() => navigator.clipboard.writeText(generatedPassword)}
+              className="absolute right-4 p-2 rounded-lg bg-gray-900 hover:bg-gray-700 active:bg-gray-900"
+            >
+              <HiOutlineClipboardCopy
+                className="h-6 w-6"
+                style={{ color: 'grey' }}
+              />
+            </button>
+          </div>
+          <p className="mt-2 text-left opacity-25 italic text-sm text-white">
+            * Remember your password by simply memorizing it.
+          </p>
+          {(opts.isDoubled || opts.isPowered) && (
+            <p className="text-left opacity-25 italic text-sm text-white">
+              ** We&apos;ve been told that our developers don&apos;t know how to
+              code a shopping cart, so I guess it&apos;s on the house.
+            </p>
+          )}
+        </div>
+        <div className="h-10 bg-gradient-to-b from-zinc-900 from-15%"></div>
+      </section>
+      <div className="-mt-4 border-2 border-cyan-400 p-2 mx-4 mb-6 rounded-lg">
         <Checkbox
           value={opts.isBothOptimized || !opts.isDictOptimized}
           name="isReverseOptimized"
@@ -117,7 +162,7 @@ export default function PassGenerator() {
           handleOnClick={handleOnClick}
         />
       </div>
-      <div className="border-2 border-cyan-400 p-2 m-4 mt-0 rounded-lg">
+      <div className="border-2 border-cyan-400 p-2 mx-4 mb-6 rounded-lg">
         <Checkbox
           value={opts.isUppercased}
           name="isUppercased"
@@ -127,7 +172,7 @@ export default function PassGenerator() {
           handleOnClick={handleOnClick}
         />
       </div>
-      <div className="border-2 border-cyan-400 p-2 m-4 mt-0 rounded-lg">
+      <div className="border-2 border-cyan-400 p-2 mx-4 mb-6 rounded-lg">
         <Checkbox
           className="border-emerald-400"
           value={opts.isLeeted}
@@ -138,7 +183,7 @@ export default function PassGenerator() {
           handleOnClick={handleOnClick}
         />
       </div>
-      <div className="border-2 border-amber-400 p-2 m-4 mt-0 rounded-lg">
+      <div className="border-2 border-amber-400 p-2 mx-4 mb-6 rounded-lg">
         <Checkbox
           className="border-orange-400"
           value={opts.isDoubled}
@@ -149,7 +194,7 @@ export default function PassGenerator() {
           handleOnClick={handleOnClick}
         />
       </div>
-      <div className="border-2 border-amber-400 p-2 m-4 mt-0 rounded-lg">
+      <div className="border-2 border-amber-400 p-2 mx-4 mb-6 rounded-lg">
         <Checkbox
           className="border-orange-400"
           value={opts.isPowered}
@@ -160,38 +205,6 @@ export default function PassGenerator() {
           handleOnClick={handleOnClick}
         />
       </div>
-      <button
-        className={`rounded-lg m-4 mt-0 p-2 py-4 font-bold text-xl text-white transition ease-in-out hover:shadow-lg active:shadow-none active:scale-95 hover:shadow-gray-800`}
-        onClick={() => handleOnSubmit()}
-        style={{
-          backgroundColor: submitGradient.color,
-          backgroundImage: submitGradient.gradient,
-        }}
-      >
-        Re-Generate Password
-      </button>
-      <div className="relative flex justify-center items-center h-16 w-100 rounded-lg mx-4 bg-gray-800">
-        {loading ? (
-          <RiLoader5Fill className="animate-spin h-8 w-8" style={{ color: 'grey' }} />
-        ) : (
-          <p className="animate-pulse text-2xl font-mono text-white">{generatedPassword}</p>
-        )}
-        <button
-          onClick={() => navigator.clipboard.writeText(generatedPassword)}
-          className="absolute right-4 p-2 rounded-lg bg-gray-900 hover:bg-gray-700 active:bg-gray-900"
-        >
-          <HiOutlineClipboardCopy className="h-6 w-6" style={{ color: 'grey' }} />
-        </button>
-      </div>
-      <p className="ml-4 mt-2 text-left opacity-25 italic text-sm text-white">
-        * Remember your password by simply memorizing it.
-      </p>
-      {(opts.isDoubled || opts.isPowered) && (
-        <p className="ml-4 text-left opacity-25 italic text-sm text-white">
-          ** We've been told that our developers don't know how to code a shopping cart, so I guess it's on
-          the house.
-        </p>
-      )}
     </div>
   );
 }
