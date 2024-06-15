@@ -39,3 +39,56 @@ code {
   font-family: titty;
   box-sizing: border-box;
 }
+
+/* https://codepen.io/MauriciAbad/pen/WNrpmPr */
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.rotating-border {
+  --border-size: 2px;
+  --border-bg: conic-gradient(
+    #fde047,
+    #f59e0b,
+    #fde047,
+    #f59e0b,
+    #fde047,
+    #fde047
+  );
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+
+  &::before {
+    content: '';
+    display: block;
+    background: var(--border-bg);
+    width: 150%;
+    padding-bottom: 150%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    z-index: -2;
+    animation: spin 5s linear infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: var(--border-size);
+    background: #18181b;
+    z-index: -1;
+    border-radius: 8px;
+  }
+}
+
+/* To stagger the animation */
+.rotating-border:nth-last-of-type(1)::before {
+  animation-delay: -5s;
+}

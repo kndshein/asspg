@@ -183,7 +183,7 @@ export default function PassGenerator() {
           handleOnClick={handleOnClick}
         />
       </div>
-      <div className="border-2 border-amber-400 p-2 mx-4 mb-6 rounded-lg">
+      <div className="p-2 mx-4 mb-6 rounded-lg rotating-border">
         <Checkbox
           className="border-orange-400"
           value={opts.isDoubled}
@@ -194,7 +194,7 @@ export default function PassGenerator() {
           handleOnClick={handleOnClick}
         />
       </div>
-      <div className="border-2 border-amber-400 p-2 mx-4 mb-6 rounded-lg">
+      <div className="p-2 mx-4 mb-6 rounded-lg rotating-border">
         <Checkbox
           className="border-orange-400"
           value={opts.isPowered}
