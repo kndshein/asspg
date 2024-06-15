@@ -97,8 +97,6 @@ code {
 .reflection {
   position: relative;
   overflow: hidden;
-  display: table-cell;
-  vertical-align: center;
 }
 .reflection::after {
   content: '';
