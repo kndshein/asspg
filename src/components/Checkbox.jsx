@@ -55,13 +55,13 @@ export default function Checkbox({
   };
 
   return (
-    <section className="flex p-2">
+    <section className="flex p-2 pb-3">
       <div
         className={`flex shrink-0 justify-center items-center mr-4 mt-1.5 w-14 h-14 border-4 ${
           is_round ? 'rounded-full' : 'rounded-xl'
         } transition ease-in-out ${
           disabled
-            ? 'border-zinc-800'
+            ? 'border-zinc-700'
             : `border-gray-600 ${colorConfig[name].borderHover}`
         }`}
       >
@@ -70,7 +70,7 @@ export default function Checkbox({
             is_round ? 'rounded-full' : 'rounded-md'
           } transition ease-in-out ${
             disabled
-              ? 'bg-zinc-800'
+              ? 'bg-zinc-700'
               : `${value && `bg-gradient-to-r ${colorConfig[name].gradient}`} ${
                   value ? 'active:scale-90' : 'active:scale-125'
                 } hover:bg-gray-700`
@@ -83,8 +83,8 @@ export default function Checkbox({
         <p
           className={`font-bold text-lg flex items-center ${
             disabled
-              ? 'text-zinc-700'
-              : `${value ? `${colorConfig[name].textColor}` : 'text-gray-300'}`
+              ? 'text-zinc-600'
+              : `${value ? `${colorConfig[name].textColor}` : 'text-gray-200'}`
           }`}
         >
           <span className="mr-2">{desc}</span>
@@ -94,11 +94,11 @@ export default function Checkbox({
             </span>
           )}
         </p>
-        <p className={`${disabled ? 'text-zinc-700' : 'text-zinc-500'}`}>
+        <p className={`${disabled ? 'text-zinc-600' : 'text-zinc-400'}`}>
           {long_desc}
         </p>
         {example && (
-          <p className="text-gray-400 italic mt-0.5">Examples: {example}</p>
+          <p className="text-gray-300 italic mt-0.5">Examples: {example}</p>
         )}
       </section>
     </section>

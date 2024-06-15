@@ -100,9 +100,9 @@ export default function PassGenerator() {
     <>
       <Toaster position="top-right" />
       <div className="flex flex-col max-w-2xl">
-        <p className="m-4 my-0 text-3xl text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-sky-400 font-semibold">
+        <h1 className="m-4 my-0 text-3xl text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-sky-400 font-semibold">
           Aardvark Secure Secret Password Generator
-        </p>
+        </h1>
         <section className="w-full rounded-lg px-4 top-0 sticky">
           <div className="bg-zinc-900 pt-6">
             <button
