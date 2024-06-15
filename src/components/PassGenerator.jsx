@@ -4,6 +4,7 @@ import generatePassword from '../utilities/generatePassword';
 import generateGradient from '../utilities/generateGradient';
 import { HiOutlineClipboardCopy } from 'react-icons/hi';
 import { RiLoader5Fill } from 'react-icons/ri';
+import { FaClipboardCheck } from 'react-icons/fa';
 import Password from './Password';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -123,14 +124,15 @@ export default function PassGenerator() {
               )}
               <button
                 onClick={() => {
+                  const isPaid = opts.isDoubled || opts.isPowered;
                   navigator.clipboard.writeText(generatedPassword);
                   toast.success('Password copied!', {
-                    style: {
-                      borderRadius: '8px',
-                      border: '1px solid #22d3ee',
-                      background: '#1f2937',
-                      color: '#d1d5db',
-                    },
+                    icon: isPaid ? <FaClipboardCheck /> : undefined,
+                    className: `rounded-md font-bold ${
+                      isPaid
+                        ? 'pl-4 pr-2 bg-gradient-to-r from-yellow-300 to-amber-500 reflection reflection-lg text-black'
+                        : 'text-gray-300 border border-cyan-400 bg-gray-800'
+                    }`,
                   });
                 }}
                 className="absolute right-4 p-2 rounded-lg bg-gray-900 hover:bg-gray-700 active:bg-gray-950"
