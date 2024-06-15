@@ -41,6 +41,7 @@ export default function PassGenerator() {
     )
   );
   const [generationCount, setGenerationCount] = useState(0);
+  const [isCopied, setIsCopied] = useState(false);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -61,6 +62,7 @@ export default function PassGenerator() {
   }, [loading]);
 
   function handleOnClick(name) {
+    setGenerationCount((prevState) => prevState + 1);
     if (name === 'isBothOptimized') {
       setOpts({
         ...opts,
@@ -75,6 +77,7 @@ export default function PassGenerator() {
       }
       setOpts({ ...opts, [name]: !opts[name] });
     }
+    setIsCopied(false);
   }
 
   function handleOnSubmit() {
@@ -89,7 +92,10 @@ export default function PassGenerator() {
         opts.isDoubled
       )
     );
+    setIsCopied(false);
   }
+
+  const isPaid = opts.isDoubled || opts.isPowered;
 
   return (
     <>
@@ -124,7 +130,6 @@ export default function PassGenerator() {
               )}
               <button
                 onClick={() => {
-                  const isPaid = opts.isDoubled || opts.isPowered;
                   navigator.clipboard.writeText(generatedPassword);
                   toast.success('Password copied!', {
                     icon: isPaid ? <FaClipboardCheck /> : undefined,
@@ -134,6 +139,7 @@ export default function PassGenerator() {
                         : 'text-gray-300 border border-cyan-400 bg-gray-800'
                     }`,
                   });
+                  setIsCopied(true);
                 }}
                 className="absolute right-4 p-2 rounded-lg bg-gray-900 hover:bg-gray-700 active:bg-gray-950"
               >
@@ -141,12 +147,26 @@ export default function PassGenerator() {
                   className="h-6 w-6"
                   style={{ color: 'grey' }}
                 />
+                {generationCount != 0 && !isCopied && (
+                  <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                    <span
+                      className={`animate-ping absolute inline-flex h-full w-full rounded-full ${
+                        isPaid ? 'bg-amber-500' : 'bg-sky-400'
+                      } opacity-75`}
+                    ></span>
+                    <span
+                      className={`relative inline-flex rounded-full h-3 w-3 ${
+                        isPaid ? 'bg-yellow-300' : 'bg-sky-500'
+                      }`}
+                    ></span>
+                  </span>
+                )}
               </button>
             </div>
             <p className="mt-2 text-left opacity-25 italic text-sm text-white">
               * Remember your password by simply memorizing it.
             </p>
-            {(opts.isDoubled || opts.isPowered) && (
+            {isPaid && (
               <p className="text-left opacity-25 italic text-sm text-white">
                 ** We&apos;ve been told that our developers don&apos;t know how
                 to code a shopping cart, so I guess it&apos;s on the house.
