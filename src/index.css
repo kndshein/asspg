@@ -151,22 +151,22 @@ code {
 .reflection.reflection-lg::after {
   top: -150px;
   left: -150px;
-  animation: reflect-lg 2s ease-in-out infinite;
+  animation: reflect-lg 2s ease-in-out;
 }
 @keyframes reflect-lg {
   0% {
     transform: scale(0) rotate(-45deg);
     opacity: 0;
   }
-  80% {
+  30% {
     transform: scale(2) rotate(-45deg);
     opacity: 0.1;
   }
-  81% {
+  31% {
     transform: scale(8) rotate(-45deg);
     opacity: 1;
   }
-  100% {
+  50% {
     transform: scale(20) rotate(-45deg);
     opacity: 0;
   }
