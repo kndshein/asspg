@@ -81,7 +81,7 @@ export default function Checkbox({
       </div>
       <section className="flex flex-col">
         <p
-          className={`font-bold text-lg flex items-center ${
+          className={`font-bold text-lg flex items-center flex-wrap ${
             disabled
               ? 'text-zinc-600'
               : `${value ? `${colorConfig[name].textColor}` : 'text-gray-200'}`
