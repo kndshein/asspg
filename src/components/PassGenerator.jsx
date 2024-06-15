@@ -175,7 +175,7 @@ export default function PassGenerator() {
           </div>
           <div className="h-10 bg-gradient-to-b from-zinc-900 from-15%"></div>
         </section>
-        <div className="-mt-4 border-2 border-cyan-400 p-2 mx-4 mb-6 rounded-lg">
+        <div className="-mt-4 border-2 border-cyan-400 p-2 mx-4 mb-5 rounded-lg">
           <Checkbox
             value={opts.isBothOptimized || !opts.isDictOptimized}
             name="isReverseOptimized"
@@ -203,7 +203,7 @@ export default function PassGenerator() {
             handleOnClick={handleOnClick}
           />
         </div>
-        <div className="border-2 border-cyan-400 p-2 mx-4 mb-6 rounded-lg">
+        <div className="border-2 border-cyan-400 p-2 mx-4 mb-5 rounded-lg">
           <Checkbox
             value={opts.isUppercased}
             name="isUppercased"
@@ -213,7 +213,7 @@ export default function PassGenerator() {
             handleOnClick={handleOnClick}
           />
         </div>
-        <div className="border-2 border-cyan-400 p-2 mx-4 mb-6 rounded-lg">
+        <div className="border-2 border-cyan-400 p-2 mx-4 mb-5 rounded-lg">
           <Checkbox
             className="border-emerald-400"
             value={opts.isLeeted}
@@ -224,7 +224,7 @@ export default function PassGenerator() {
             handleOnClick={handleOnClick}
           />
         </div>
-        <div className="p-2 mx-4 mb-6 rounded-lg rotating-border">
+        <div className="p-2 mx-4 mb-5 rounded-lg rotating-border">
           <Checkbox
             className="border-orange-400"
             value={opts.isDoubled}
@@ -235,7 +235,7 @@ export default function PassGenerator() {
             handleOnClick={handleOnClick}
           />
         </div>
-        <div className="p-2 mx-4 mb-6 rounded-lg rotating-border">
+        <div className="p-2 mx-4 mb-5 rounded-lg rotating-border">
           <Checkbox
             className="border-orange-400"
             value={opts.isPowered}
