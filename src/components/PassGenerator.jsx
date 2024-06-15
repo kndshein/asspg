@@ -138,9 +138,7 @@ export default function PassGenerator() {
                         }
                       : undefined,
                     className: `rounded-md font-bold ${
-                      isPaid
-                        ? 'reflection reflection-lg text-black'
-                        : 'text-gray-300'
+                      isPaid ? 'reflection reflection-lg text-black' : ''
                     }`,
                     // Tailwind classes are overriden in prod
                     style: isPaid
@@ -155,8 +153,8 @@ export default function PassGenerator() {
                           paddingRight: '0.5rem',
                           border: '1px solid #22d3ee',
                           backgroundColor: '#1f2937',
+                          color: '#d1d5db',
                         },
-                    duration: 300000,
                   });
                   setIsCopied(true);
                 }}
