@@ -106,7 +106,7 @@ export default function PassGenerator() {
         <section className="w-full rounded-lg px-4 top-0 sticky">
           <div className="bg-zinc-900 pt-6">
             <button
-              className="w-full rounded-lg mt-0 p-2 py-4 font-bold text-xl text-white transition ease-in-out hover:shadow-lg active:shadow-none active:scale-95 hover:shadow-gray-800"
+              className="w-full rounded-lg mt-0 p-2 py-4 font-bold text-xl text-white transition ease-in-out active:scale-95"
               onClick={() => handleOnSubmit()}
               style={{
                 backgroundColor: submitGradient.color,
@@ -158,7 +158,7 @@ export default function PassGenerator() {
                   });
                   setIsCopied(true);
                 }}
-                className="absolute right-4 p-2 rounded-lg bg-gray-900 hover:bg-gray-700 active:bg-gray-950"
+                className="absolute right-4 p-2 rounded-lg bg-gray-900 transition ease-in-out hover:bg-gray-700 active:scale-90"
               >
                 <HiOutlineClipboardCopy
                   className="h-6 w-6"

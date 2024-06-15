@@ -71,9 +71,9 @@ export default function Checkbox({
           } transition ease-in-out ${
             disabled
               ? 'bg-zinc-800'
-              : `${
-                  value && `bg-gradient-to-r ${colorConfig[name].gradient}`
-                } hover:shadow-md active:shadow-inner hover:shadow-gray-700`
+              : `${value && `bg-gradient-to-r ${colorConfig[name].gradient}`} ${
+                  value ? 'active:scale-90' : 'active:scale-125'
+                } hover:bg-gray-700`
           }`}
           onClick={() => handleOnClick(name)}
           disabled={disabled}
