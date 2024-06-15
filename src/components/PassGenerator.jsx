@@ -116,7 +116,7 @@ export default function PassGenerator() {
             )}
             <button
               onClick={() => navigator.clipboard.writeText(generatedPassword)}
-              className="absolute right-4 p-2 rounded-lg bg-gray-900 hover:bg-gray-700 active:bg-gray-900"
+              className="absolute right-4 p-2 rounded-lg bg-gray-900 hover:bg-gray-700 active:bg-gray-950"
             >
               <HiOutlineClipboardCopy
                 className="h-6 w-6"
