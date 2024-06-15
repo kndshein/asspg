@@ -4,6 +4,7 @@ import generatePassword from '../utilities/generatePassword';
 import generateGradient from '../utilities/generateGradient';
 import { HiOutlineClipboardCopy } from 'react-icons/hi';
 import { RiLoader5Fill } from 'react-icons/ri';
+import Password from './Password';
 
 let colorChart = {
   isReversedOptimized: 'rgb(251, 113, 133)',
@@ -37,6 +38,7 @@ export default function PassGenerator() {
       opts.isDoubled
     )
   );
+  const [generationCount, setGenerationCount] = useState(0);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -74,6 +76,7 @@ export default function PassGenerator() {
   }
 
   function handleOnSubmit() {
+    setGenerationCount((prevState) => prevState + 1);
     opts.isPowered && setLoading(true);
     setGeneratedPassword(
       generatePassword(
@@ -110,9 +113,7 @@ export default function PassGenerator() {
                 style={{ color: 'grey' }}
               />
             ) : (
-              <p className="animate-pulse text-2xl font-mono text-white">
-                {generatedPassword}
-              </p>
+              <Password text={generatedPassword} newRender={generationCount} />
             )}
             <button
               onClick={() => navigator.clipboard.writeText(generatedPassword)}
