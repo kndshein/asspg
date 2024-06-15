@@ -4,7 +4,6 @@ import generatePassword from '../utilities/generatePassword';
 import generateGradient from '../utilities/generateGradient';
 import { HiOutlineClipboardCopy } from 'react-icons/hi';
 import { RiLoader5Fill } from 'react-icons/ri';
-import { FaClipboardCheck } from 'react-icons/fa';
 import Password from './Password';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -132,12 +131,32 @@ export default function PassGenerator() {
                 onClick={() => {
                   navigator.clipboard.writeText(generatedPassword);
                   toast.success('Password copied!', {
-                    icon: isPaid ? <FaClipboardCheck /> : undefined,
+                    iconTheme: isPaid
+                      ? {
+                          primary: 'black',
+                          secondary: 'white',
+                        }
+                      : undefined,
                     className: `rounded-md font-bold ${
                       isPaid
-                        ? 'pl-4 pr-2 bg-gradient-to-r from-yellow-300 to-amber-500 reflection reflection-lg text-black'
-                        : 'text-gray-300 border border-cyan-400 bg-gray-800'
+                        ? 'reflection reflection-lg text-black'
+                        : 'text-gray-300'
                     }`,
+                    // Tailwind classes are overriden in prod
+                    style: isPaid
+                      ? {
+                          paddingLeft: '1rem',
+                          paddingRight: '0.5rem',
+                          backgroundImage:
+                            'linear-gradient(to right, #fde047, #f59e0b)',
+                        }
+                      : {
+                          paddingLeft: '1rem',
+                          paddingRight: '0.5rem',
+                          border: '1px solid #22d3ee',
+                          backgroundColor: '#1f2937',
+                        },
+                    duration: 300000,
                   });
                   setIsCopied(true);
                 }}
