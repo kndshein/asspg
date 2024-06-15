@@ -76,7 +76,7 @@ export default function Checkbox({
       </div>
       <section className="flex flex-col">
         <p
-          className={`font-bold text-lg ${
+          className={`font-bold text-lg flex items-center ${
             disabled
               ? 'text-zinc-700'
               : `${value ? `${colorConfig[name].textColor}` : 'text-gray-300'}`
@@ -84,7 +84,7 @@ export default function Checkbox({
         >
           <span className="mr-2">{desc}</span>
           {price && (
-            <span className="inline-block px-1.5 pb-0.5 rounded-md text-black text-base bg-gradient-to-r from-lime-400 to-green-400">
+            <span className="inline-block px-1.5 pb-0.5 rounded-md text-black text-sm text-base bg-gradient-to-r from-yellow-300 to-amber-500 reflection">
               {price}
             </span>
           )}

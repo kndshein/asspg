@@ -88,7 +88,7 @@ export default function PassGenerator() {
 
   return (
     <div className="flex flex-col max-w-2xl">
-      <p className="m-4 mb-2 mt-0 text-3xl text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-sky-400 font-semibold">
+      <p className="m-4 my-0 text-3xl text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-sky-400 font-semibold">
         Aardvark Secure Secret Password Generator
       </p>
       <section className="w-full rounded-lg px-4 top-0 sticky">
